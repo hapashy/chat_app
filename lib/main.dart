@@ -11,10 +11,12 @@ class ScholarChat extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
+    return MaterialApp(
       routes: {
-        'LoginPage' : (context) => LoginPage(),
+        'LoginPage': (context) => LoginPage(),
+        'RegisterPage' : (context) => RegisterPage(),
       },
+      initialRoute: 'LoginPage',
       debugShowCheckedModeBanner: false,
       home: LoginPage(),
     );
