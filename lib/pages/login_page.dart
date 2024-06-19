@@ -1,6 +1,7 @@
 import 'package:chat_app/constants.dart';
 import 'package:chat_app/helper/show_snack_bar.dart';
 import 'package:chat_app/helper/signin_with_email_and_password.dart';
+import 'package:chat_app/pages/chat_page.dart';
 
 import 'package:chat_app/widgets/custom_button.dart';
 import 'package:chat_app/widgets/custom_text_field.dart';
@@ -10,7 +11,7 @@ import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 class LoginPage extends StatefulWidget {
   LoginPage({super.key});
-
+  static String id = 'login page';
   @override
   State<LoginPage> createState() => _LoginPageState();
 }
@@ -72,7 +73,7 @@ class _LoginPageState extends State<LoginPage> {
                     height: 10,
                   ),
                   CustomTextFormField(
-                     onChanged: (data) {
+                    onChanged: (data) {
                       password = data;
                     },
                     hintText: 'Password',
@@ -87,8 +88,7 @@ class _LoginPageState extends State<LoginPage> {
                         setState(() {});
                         try {
                           await loginUser();
-                          showSnackBar(context, 'Success');
-                         
+                          Navigator.pushNamed(context, ChatPage.id);
                         } on FirebaseAuthException catch (e) {
                           if (e.code == 'user-not-found') {
                             showSnackBar(context, 'user not found');

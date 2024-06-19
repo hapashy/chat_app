@@ -1,6 +1,7 @@
 import 'package:chat_app/constants.dart';
 import 'package:chat_app/helper/create_email_and_password.dart';
 import 'package:chat_app/helper/show_snack_bar.dart';
+import 'package:chat_app/pages/chat_page.dart';
 import 'package:chat_app/widgets/custom_button.dart';
 import 'package:chat_app/widgets/custom_text_field.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -9,7 +10,7 @@ import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 class RegisterPage extends StatefulWidget {
   RegisterPage({super.key});
-
+  static String id = 'register page';
   @override
   State<RegisterPage> createState() => _RegisterPageState();
 }
@@ -86,8 +87,8 @@ class _RegisterPageState extends State<RegisterPage> {
                         setState(() {});
                         try {
                           await registerUser();
-                          showSnackBar(context, 'Success');
-                          Navigator.pop(context);
+
+                          Navigator.pushNamed(context, ChatPage.id);
                         } on FirebaseAuthException catch (e) {
                           if (e.code == 'weak-password') {
                             showSnackBar(context, 'weak-password');
