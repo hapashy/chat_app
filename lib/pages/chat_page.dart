@@ -1,4 +1,5 @@
 import 'package:chat_app/constants.dart';
+import 'package:chat_app/widgets/chat_bable.dart';
 import 'package:flutter/material.dart';
 
 class ChatPage extends StatelessWidget {
@@ -17,7 +18,7 @@ class ChatPage extends StatelessWidget {
               kLogo,
               height: 50,
             ),
-            Text(
+            const Text(
               'Chat',
               style: TextStyle(color: Colors.white),
             ),
@@ -25,6 +26,7 @@ class ChatPage extends StatelessWidget {
         ),
         centerTitle: true,
       ),
+      body: ChatBuble(),
     );
   }
 }
