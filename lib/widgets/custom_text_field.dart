@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class CustomTextField extends StatelessWidget {
-  CustomTextField({this.onChanged, this.hintText});
+class CustomTextFormField extends StatelessWidget {
+  CustomTextFormField({this.onChanged, this.hintText});
 
   Function(String)? onChanged;
 
@@ -10,7 +10,7 @@ class CustomTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       validator: (data) {
-        if (data!.isEmpty ) {
+        if (data!.isEmpty) {
           return 'field is requerd';
         }
       },
