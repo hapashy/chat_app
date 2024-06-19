@@ -85,4 +85,5 @@ class DefaultFirebaseOptions {
     storageBucket: 'chat-app-74a96.appspot.com',
     measurementId: 'G-XLCMHSTES0',
   );
+
 }
