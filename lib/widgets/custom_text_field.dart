@@ -9,12 +9,12 @@ class CustomTextField extends StatelessWidget {
     return TextField(
       decoration: InputDecoration(
         hintText: hintText,
-        hintStyle: TextStyle(color: Colors.white),
+        hintStyle:const TextStyle(color: Colors.white),
         focusedBorder:
-            OutlineInputBorder(borderSide: BorderSide(color: Colors.blue)),
+         const   OutlineInputBorder(borderSide: BorderSide(color: Colors.blue)),
         enabledBorder:
-            OutlineInputBorder(borderSide: BorderSide(color: Colors.white)),
-        border: OutlineInputBorder(borderSide: BorderSide(color: Colors.white)),
+        const    OutlineInputBorder(borderSide: BorderSide(color: Colors.white)),
+        border: const OutlineInputBorder(borderSide: BorderSide(color: Colors.white)),
       ),
     );
   }

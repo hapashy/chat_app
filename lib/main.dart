@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(const ScholarChat());
-}
+} 
 
 class ScholarChat extends StatelessWidget {
   const ScholarChat({super.key});
@@ -13,12 +13,12 @@ class ScholarChat extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: {
-        'LoginPage': (context) => LoginPage(),
-        'RegisterPage' : (context) => RegisterPage(),
+        'LoginPage': (context) => const LoginPage(),
+        'RegisterPage': (context) => const RegisterPage(),
       },
       initialRoute: 'LoginPage',
       debugShowCheckedModeBanner: false,
-      home: LoginPage(),
+      home: const LoginPage(),
     );
   }
 }
