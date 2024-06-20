@@ -17,8 +17,9 @@ class ChatPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+   String email = ModalRoute.of(context)!.settings.arguments as String;
     return StreamBuilder<QuerySnapshot>(
-        stream: messages.orderBy(kCreatedAt).snapshots(),
+        stream: messages.orderBy(kCreatedAt, descending: true).snapshots(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             List<Message> messagesList = [];
@@ -48,6 +49,7 @@ class ChatPage extends StatelessWidget {
                 children: [
                   Expanded(
                     child: ListView.builder(
+                        reverse: true,
                         controller: _controller,
                         itemCount: messagesList.length,
                         itemBuilder: (context, index) {
@@ -64,11 +66,12 @@ class ChatPage extends StatelessWidget {
                         messages.add({
                           kMessage: data,
                           kCreatedAt: DateTime.now(),
+                          'id': email
                         });
                         controller.clear();
                         _controller.animateTo(
-                          _controller.position.maxScrollExtent,
-                          duration: Duration(seconds: 1),
+                          0,
+                          duration: Duration(milliseconds: 500),
                           curve: Curves.easeIn,
                         );
                       },
