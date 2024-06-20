@@ -63,6 +63,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     height: 10,
                   ),
                   CustomTextFormField(
+                    
                     onChanged: (data) {
                       email = data;
                     },
@@ -72,6 +73,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     height: 10,
                   ),
                   CustomTextFormField(
+                    obscureText: true,
                     onChanged: (data) {
                       password = data;
                     },

@@ -1,6 +1,7 @@
 import 'package:chat_app/constants.dart';
 import 'package:chat_app/models/message.dart';
 import 'package:chat_app/widgets/chat_buble.dart';
+import 'package:chat_app/widgets/chat_buble_for_frind.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -53,9 +54,9 @@ class ChatPage extends StatelessWidget {
                         controller: _controller,
                         itemCount: messagesList.length,
                         itemBuilder: (context, index) {
-                          return ChatBuble(
+                          return messagesList[index].id == email ? ChatBuble(
                             message: messagesList[index],
-                          );
+                          ) : ChatBubleForFrind(message: messagesList[index]);
                         }),
                   ),
                   Padding(
