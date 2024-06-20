@@ -10,7 +10,7 @@ import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 class RegisterPage extends StatefulWidget {
   RegisterPage({super.key});
-  static String id = 'register page';
+  static String id = 'RegisterPage';
   @override
   State<RegisterPage> createState() => _RegisterPageState();
 }

@@ -21,7 +21,7 @@ class _ChatPageState extends State<ChatPage> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder<QuerySnapshot>(
-        stream: messages.snapshots(),
+        stream: messages.orderBy(kCreatedAt).snapshots(),
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             List<Message> messagesList = [];
@@ -51,19 +51,20 @@ class _ChatPageState extends State<ChatPage> {
                 children: [
                   Expanded(
                     child: ListView.builder(
-                      itemCount: messagesList.length,
-                      itemBuilder: (context, index) {
-                      return ChatBuble(
-                        message:messagesList[index] ,
-                      );
-                    }),
+                        itemCount: messagesList.length,
+                        itemBuilder: (context, index) {
+                          return ChatBuble(
+                            message: messagesList[index],
+                          );
+                        }),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(16),
                     child: TextField(
                       controller: controller,
                       onSubmitted: (data) {
-                        messages.add({'message': data});
+                        messages.add(
+                             { kMessage: data, kCreatedAt: DateTime.now(),});
                         controller.clear();
                       },
                       decoration: InputDecoration(

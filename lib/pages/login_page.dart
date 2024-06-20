@@ -11,7 +11,7 @@ import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 class LoginPage extends StatefulWidget {
   LoginPage({super.key});
-  static String id = 'login page';
+  static String id = 'LoginPage';
   @override
   State<LoginPage> createState() => _LoginPageState();
 }
@@ -52,7 +52,7 @@ class _LoginPageState extends State<LoginPage> {
                   const Row(
                     children: [
                       Text(
-                        'LOGIN',
+                        'Login',
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 24,
@@ -122,7 +122,7 @@ class _LoginPageState extends State<LoginPage> {
                           Navigator.pushNamed(context, 'RegisterPage');
                         },
                         child: const Text(
-                          ' Register',
+                          'Register',
                           style: TextStyle(color: Color(0xffC7EDE6)),
                         ),
                       ),
