@@ -72,13 +72,13 @@ class ChatPage extends StatelessWidget {
                         controller.clear();
                         _controller.animateTo(
                           0,
-                          duration: Duration(milliseconds: 500),
+                          duration: const Duration(milliseconds: 500),
                           curve: Curves.easeIn,
                         );
                       },
                       decoration: InputDecoration(
                         hintText: 'Send Message',
-                        suffixIcon: Icon(
+                        suffixIcon: const Icon(
                           Icons.send,
                           color: kPrimaryColor,
                         ),
@@ -87,7 +87,7 @@ class ChatPage extends StatelessWidget {
                         ),
                         enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(16),
-                            borderSide: BorderSide(
+                            borderSide:const BorderSide(
                               color: kPrimaryColor,
                             )),
                       ),
@@ -97,7 +97,7 @@ class ChatPage extends StatelessWidget {
               ),
             );
           } else {
-            return Text('Loading....');
+            return const Text('Loading....');
           }
         });
   }

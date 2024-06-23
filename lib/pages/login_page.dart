@@ -97,7 +97,7 @@ class _LoginPageState extends State<LoginPage> {
                             showSnackBar(context, 'wrong-password');
                           }
                         } catch (e) {
-                          print(e);
+                         
                           showSnackBar(context, 'there was an error');
                         }
                         isLoading = false;

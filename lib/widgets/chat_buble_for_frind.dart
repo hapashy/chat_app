@@ -14,8 +14,8 @@ class ChatBubleForFrind extends StatelessWidget {
     return Align(
       alignment: Alignment.centerRight,
       child: Container(
-        margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-        padding: EdgeInsets.all(16),
+        margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        padding: const EdgeInsets.all(16),
         decoration:const BoxDecoration(
             color: Color(0xff006D84),
             borderRadius: BorderRadius.only(
@@ -25,7 +25,7 @@ class ChatBubleForFrind extends StatelessWidget {
             )),
         child: Text(
           message.message,
-          style: TextStyle(color: Colors.white),
+          style: const TextStyle(color: Colors.white),
         ),
       ),
     );

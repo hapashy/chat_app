@@ -13,8 +13,8 @@ class ChatBuble extends StatelessWidget {
     return Align(
       alignment: Alignment.centerLeft,
       child: Container(
-        margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-        padding: EdgeInsets.all(16),
+        margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+        padding: const EdgeInsets.all(16),
         decoration:const BoxDecoration(
             color: kPrimaryColor,
             borderRadius: BorderRadius.only(
@@ -24,7 +24,7 @@ class ChatBuble extends StatelessWidget {
             )),
         child: Text(
           message.message,
-          style: TextStyle(color: Colors.white),
+          style: const TextStyle(color: Colors.white),
         ),
       ),
     );
